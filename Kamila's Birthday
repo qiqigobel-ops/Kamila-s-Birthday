@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Untuk Kamila 🤍</title>
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(circle at top,#ffe6f0,#ffffff);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{max-width:720px;width:100%;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.06);border-radius:20px;padding:22px;box-shadow:0 18px 60px rgba(0,0,0,.10)}
+    h1{margin:0 0 8px;font-size:28px}
+    .sub{opacity:.75;margin:0 0 14px}
+    .msg{line-height:1.7;font-size:16.5px}
+    .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    button,a.btn{cursor:pointer;border:0;border-radius:14px;padding:12px 14px;font-weight:600}
+    button{background:#111;color:#fff}
+    a.btn{background:#fff;border:1px solid rgba(0,0,0,.12);color:#111;text-decoration:none;display:inline-flex;align-items:center}
+    .small{font-size:13px;opacity:.7;margin-top:12px}
+    .hidden{display:none}
+    .heart{font-size:22px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Selamat ulang tahun, Kamila <span class="heart">🤍</span></h1>
+    <p class="sub">Dari Kiki — meski jauh, doaku selalu dekat.</p>
+
+    <div class="msg" id="text">
+      Barakallahu fii umrik, sayang. Semoga Allah selalu melimpahkan rahmat, berkah, dan ketenangan di setiap langkahmu.
+      Semoga kamu sehat, dimudahkan semua urusan, dan selalu dalam lindungan-Nya. Aamiin ya Rabb.<br><br>
+      Maaf aku belum bisa ada di sampingmu hari ini. Tapi aku ingin kamu tahu: kamu dicintai, dibanggakan, dan selalu aku doakan.
+      Terima kasih sudah jadi rumah yang menenangkan. Jangan berubah ya, sayang. Aku selalu jadi supporter nomor satu kamu.
+    </div>
+
+    <div class="row">
+      <button id="btn">🎉 Buka kejutan</button>
+      <!-- Ganti link ini dengan video kamu (YouTube unlisted / Drive) -->
+      <a class="btn" href="https://vt.tiktok.com/ZSPnWFK71/" target="_blank" rel="noreferrer">▶️ Putar video ucapan</a>
+      <!-- Ganti link ini dengan playlist kalian -->
+      <a class="btn" href="https://youtu.be/75UVeYGkF-s?si=JrmWDTc3dCAqz7UU" target="_blank" rel="noreferrer">🎧 Lagu kita</a>
+    </div>
+
+    <div class="small">
+      PS: Kalau kamu baca ini, berarti aku lagi “hadir” lewat cara paling sederhana: kata-kata yang jujur 🤍
+    </div>
+
+    <div id="surprise" class="hidden"></div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const surprise = document.getElementById('surprise');
+
+    function confettiBurst() {
+      const emojis = ["🎉","✨","💖","🌸","🤍","🥺"];
+      for(let i=0;i<80;i++){
+        const s=document.createElement('div');
+        s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+        s.style.position="fixed";
+        s.style.left=(Math.random()*100)+"vw";
+        s.style.top="-10vh";
+        s.style.fontSize=(14+Math.random()*22)+"px";
+        s.style.transition="transform 2.6s linear, top 2.6s linear, opacity 2.6s linear";
+        document.body.appendChild(s);
+        requestAnimationFrame(()=>{
+          s.style.top="110vh";
+          s.style.transform="rotate("+(Math.random()*720)+"deg)";
+          s.style.opacity="0";
+        });
+        setTimeout(()=>s.remove(),2700);
+      }
+    }
+
+    btn.addEventListener('click', ()=>{
+      confettiBurst();
+      alert("Untuk Kamila 🤍\nSemoga hari ini lembut dan bahagia. Aku sayang kamu, selalu.");
+    });
+  </script>
+</body>
+</html>
